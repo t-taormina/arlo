@@ -1,2 +1,2 @@
-all: 
-	gcc arlo.c init.c -o arloo 
+all: 	
+	gcc arlo.c init.c -o arlo

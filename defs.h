@@ -11,7 +11,7 @@ typedef unsigned long long U64;
 
 enum { EMPTY, wP, wN, wB, wR, wQ, wK, bP, bN, bB, bR, bQ, bK };
 enum { FILE_A, FILE_B, FILE_C, FILE_D, FILE_E, FILE_F, FILE_G, FILE_H, FILE_NONE };      
-enum { RANK_A, RANK_B, RANK_C, RANK_D, RANK_E, RANK_F, RANK_G, RANK_H, RANK_NONE };      
+enum { RANK_1, RANK_2, RANK_3, RANK_4, RANK_5, RANK_6, RANK_7, RANK_8, RANK_NONE };      
 enum { WHITE, BLACK, BOTH };
 enum { FALSE, TRUE };
 enum { WKCA = 1, WQCA = 2, BKCA = 4, BQCA = 8 };
@@ -58,6 +58,23 @@ typedef struct {
 
   S_UNDO history[MAX_GAME_MOVES];
 
+  // piece list
+  int pList[13][10];
+
 } S_BOARD;
+
+/* MACROS */
+#define FR2SQ(f,r) ( (21 + ( f ) ) + ( ( r ) * 10 ) ) 
+
+/* GLOBALS */
+extern int Sq120ToSq64[BRD_SQ_NUM];
+extern int Sq64ToSq120[64];
+
+/* FUNCTIONS */
+extern void AllInit();
+extern void InitSq120To64();
+
+/* init.c */
+
 
 #endif
